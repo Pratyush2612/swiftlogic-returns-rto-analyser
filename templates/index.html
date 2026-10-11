@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Returns & RTO analyser — SwiftLogic AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <link rel="stylesheet" href="/static/app.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">SwiftLogic <em>AI</em> <sup>demo</sup></div>
+    <div class="badge">D2C · Returns & RTO</div>
+    <button id="pack-btn" type="button">Download weekly pack</button>
+  </header>
+
+  <main>
+    <section class="hero-line">
+      <h1>{{ brand }} — returns & RTO analyser</h1>
+      <p>Orders joined to pincode master and reason catalogue. Flags high-RTO SKUs and cities. Plotly live view + openpyxl weekly pack.</p>
+    </section>
+
+    <section class="filters">
+      <label>City
+        <select id="city"><option value="all">All cities</option></select>
+      </label>
+      <label>SKU
+        <select id="sku"><option value="all">All SKUs</option></select>
+      </label>
+      <label>Payment
+        <select id="payment">
+          <option value="all">All</option>
+          <option value="COD">COD</option>
+          <option value="Prepaid">Prepaid</option>
+        </select>
+      </label>
+    </section>
+
+    <section class="kpis" id="kpis"></section>
+
+    <section class="grid">
+      <div class="card wide"><div id="chart-weekly"></div></div>
+      <div class="card"><div id="chart-reasons"></div></div>
+      <div class="card"><div id="chart-cities"></div></div>
+      <div class="card"><div id="chart-skus"></div></div>
+      <div class="card"><div id="chart-payment"></div></div>
+    </section>
+
+    <section class="tables">
+      <article class="card">
+        <h2>Flagged SKUs</h2>
+        <div class="table-wrap" id="table-skus"></div>
+      </article>
+      <article class="card">
+        <h2>Flagged cities</h2>
+        <div class="table-wrap" id="table-cities"></div>
+      </article>
+    </section>
+  </main>
+
+  <footer>Demo data · SwiftLogic AI · ₹40,000–₹85,000 engagement band</footer>
+  <script src="/static/app.js"></script>
+</body>
+</html>
